@@ -7,18 +7,13 @@ const Cards = ({ info }) => {
   const [loading, setLoading] = useState(true);
 
   const handleClick = async (info) => {
+    setLoading(true);
     const data = await fetch(info.url);
     const pokeInfo = await data.json();
     console.log(info.url);
     setPokemon(pokeInfo);
+    setLoading(false);
   };
-
-  useEffect(() => {
-    setLoading(true);
-    if (pokemon) {
-      setLoading(false);
-    }
-  }, [pokemon]);
 
   return (
     <div className='col-md-12'>

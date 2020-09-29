@@ -7,6 +7,7 @@ const PokeInfo = ({ pokemon }) => {
 
   useEffect(() => {
     if (pokemon) {
+      console.log(pokemon.abilities);
       setAbilities(pokemon.abilities);
     }
   }, [pokemon]);
@@ -19,10 +20,10 @@ const PokeInfo = ({ pokemon }) => {
         <h3>{pokemon.height}</h3>
       </div>
 
-      {pokemon
-        ? pokemon.abilities.map((a, i) => (
+      {abilities.length
+        ? abilities.map((a, i) => (
             <div key={i}>
-              <h3>{a.abilities}</h3>
+              <h3>{a.ability.name}</h3>
             </div>
           ))
         : ''}
