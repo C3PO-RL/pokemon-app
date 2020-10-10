@@ -1,19 +1,19 @@
-import React, { useState, useEffect } from 'react';
-import PokeInfo from './../PokeInfo/PokeInfo';
+import React, { useState } from 'react';
+//import PokeInfo from './../PokeInfo/PokeInfo';
 
-const Cards = ({ info }) => {
-  const [pokemon, setPokemon] = useState({});
+const Cards = ({ info, handleClick }) => {
+  //  const [pokemon, setPokemon] = useState({});
 
-  const [loading, setLoading] = useState(true);
+  //  const [loading, setLoading] = useState(true);
 
-  const handleClick = async (info) => {
-    setLoading(true);
-    const data = await fetch(info.url);
-    const pokeInfo = await data.json();
-    console.log(info.url);
-    setPokemon(pokeInfo);
-    setLoading(false);
-  };
+  //  const handleClick = async (info) => {
+  //    setLoading(true);
+  //    const data = await fetch(info.url);
+  //    const pokeInfo = await data.json();
+  //    console.log(info.url);
+  //    setPokemon(pokeInfo);
+  //    setLoading(false);
+  //  };
 
   return (
     <div className='col-md-12'>
@@ -33,8 +33,8 @@ const Cards = ({ info }) => {
             </div>
           </div>
         ))}
-        <div>{loading ? 'Cargando' : <PokeInfo pokemon={pokemon} />}</div>
       </div>
+      {/*<div>{loading ? '' : <PokeInfo pokemon={pokemon} />}</div>*/}
     </div>
   );
 };

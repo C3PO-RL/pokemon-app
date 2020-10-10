@@ -15,9 +15,13 @@ const PokeInfo = ({ pokemon }) => {
   console.log(abilities);
 
   return (
-    <div>
-      <div className='card-body'>
-        <h3>{pokemon.height}</h3>
+    <div className='card mt-4  ' style={{ width: '200px' }}>
+      <div className='card-body  '>
+        <h3>{pokemon.name}</h3>
+      </div>
+
+      <div>
+        <img src={pokemon.sprites.front_default} alt='' />
       </div>
 
       {abilities.length
