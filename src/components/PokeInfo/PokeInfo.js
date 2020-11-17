@@ -15,7 +15,7 @@ const PokeInfo = ({ pokemon }) => {
   console.log(abilities);
 
   return (
-    <div className='card mt-4  ' style={{ width: '200px' }}>
+    <div className='card mt-12  ' style={{ width: '200px' }}>
       <div className='card-body  '>
         <h3>{pokemon.name}</h3>
       </div>

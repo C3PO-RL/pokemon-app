@@ -41,12 +41,14 @@ function App() {
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   return (
-    <div className='container'>
-      <Navbar postsPerPage={postsPerPage} totalInfo={info.length} paginate={paginate} />
-      <div>
-        <Cards info={currentInfo} handleClick={handleClick} />
+    <div>
+      <div className='container'>
+        <Navbar postsPerPage={postsPerPage} totalInfo={info.length} paginate={paginate} />
+        <div>
+          <Cards info={currentInfo} handleClick={handleClick} />
+        </div>
       </div>
-      <div>{loading ? '' : <PokeInfo pokemon={pokemon} />}</div>
+      <div className='container mt-2 center'>{loading ? '' : <PokeInfo pokemon={pokemon} />}</div>
     </div>
   );
 }
